@@ -1,9 +1,15 @@
 from django import forms
+from django.forms import modelformset_factory
+from .models import Block, LocationBlock, TextBlock, MeasurementBlock
 
-from .models import Book
-
-class BookForm(forms.ModelForm):
-
+class BlockModelForm(forms.ModelForm):
     class Meta:
-        model = Book
-        
+        model = Block
+        fields = '__all__'
+
+
+LocationBlockFormset = modelformset_factory(
+    LocationBlock,
+    fields = '__all__',
+    extra=1
+)
