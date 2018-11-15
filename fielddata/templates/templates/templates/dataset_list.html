@@ -1,0 +1,14 @@
+{% block content %}
+<h1>Datasets</h1>
+{% if dataset_list %}
+  <ul>
+    {% for dataset in dataset_list %}
+      <li>
+        {{ dataset.name }} ({{dataset.createDate}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}
