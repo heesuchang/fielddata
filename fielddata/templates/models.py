@@ -11,6 +11,7 @@ class Template(models.Model):
     def __str__(self):
         return self.name
 
+
 class Dataset(models.Model):
     template = models.ManyToManyField(Template)
     name = models.CharField(max_length=100)
